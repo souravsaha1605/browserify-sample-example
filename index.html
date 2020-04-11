@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="trie-ing/bundle.js"></script>
+
+</head>
+<body>
+<script>
+
+
+    var trie = new Trie();
+
+    trie.add({
+        key: "richard",
+        value: {name: "Richard"},
+        score: 5
+    });
+
+    trie.add({
+        key: "rachael",
+        value: {name: "Rachael"},
+        score: 1
+    });
+
+    trie.add({
+        key: "sarah",
+        value: {name: "Sarah"},
+        score: 3
+    });
+
+    trie.add({
+        key: "sam",
+        value: {name: "Sam"},
+        score: 2
+    });
+
+    // The limit option limits the number of results.
+    // The unique option returns only the first result for each key
+    // (the trie can store multiple values per key)
+    console.log(trie.prefixSearch('r', {limit: 3, unique: true}));
+    //=> [{name: "Richard", ...} , {name: "Rachael", ...}]
+</script>
+</body>
+</html>
